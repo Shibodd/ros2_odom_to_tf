@@ -14,8 +14,8 @@ find_package (geometry_msgs REQUIRED)
 find_package (tf2_ros REQUIRED)
 find_package (builtin_interfaces REQUIRED)
 
-add_executable (the_node src/the_node.cpp)
-ament_target_dependencies (the_node
+add_executable (${PROJECT_NAME} src/the_node.cpp)
+ament_target_dependencies (${PROJECT_NAME}
   rclcpp
   std_msgs
   builtin_interfaces
@@ -24,6 +24,6 @@ ament_target_dependencies (the_node
   tf2_ros
 )
 
-install (TARGETS the_node DESTINATION lib/${PROJECT_NAME})
+install (TARGETS ${PROJECT_NAME} DESTINATION lib/${PROJECT_NAME})
 
 ament_package()
